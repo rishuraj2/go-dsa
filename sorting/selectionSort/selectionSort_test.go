@@ -20,10 +20,9 @@ func TestSelectionSort(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			inputArray := append([]int{}, test.input...)
-			SelectionSort(inputArray);
-			if !reflect.DeepEqual(inputArray, test.expectedOutput) {
-				t.Errorf("expected: %v, but got: %v", test.expectedOutput, inputArray);
+			SelectionSort(test.input);
+			if !reflect.DeepEqual(test.input, test.expectedOutput) {
+				t.Errorf("expected: %v, but got: %v", test.expectedOutput, test.input);
 			}
 		})
 	}
