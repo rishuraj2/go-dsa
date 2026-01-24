@@ -10,6 +10,6 @@ func rotate(nums []int, k int) {
 	for i := start; i < end; i++ {
 		result = append(result, nums[i%numsLength])
 	}
-
+	
 	copy(nums, result)
 }
