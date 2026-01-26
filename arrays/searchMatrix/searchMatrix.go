@@ -23,11 +23,11 @@ func searchMatrix(matrix [][]int, target int) bool {
 
 	for colSearchStart <= colSearchEnd {
 		mid := colSearchStart + (colSearchEnd - colSearchStart)/2
-		if (matrix[rowSearchEnd][mid] == target) {
+		if (matrix[rowSearchStart][mid] == target) {
 			return true
 		}
 
-		if (target < matrix[rowSearchEnd][mid]) {
+		if (target < matrix[rowSearchStart][mid]) {
 			colSearchEnd = mid - 1
 		} else {
 			colSearchStart = mid + 1
