@@ -6,6 +6,5 @@ import (
 )
 
 func main() {
-	nums := []int{1, 2, 3}
-	fmt.Println(recursion.PowerSet(nums))
+	fmt.Println(recursion.GenerateBinaryStrings(3))
 }
