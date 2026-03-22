@@ -6,5 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(recursion.GenerateParenthesis(3))
+	nums := []int{1, 2, 3}
+	fmt.Println(recursion.PowerSet(nums))
 }
