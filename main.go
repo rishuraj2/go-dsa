@@ -6,5 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(recursion.GenerateBinaryStrings(3))
+	nums := []int{4, 2, 10, 5, 1, 3}
+	fmt.Println(recursion.CountSubsequenceWithTargetSum(nums, 5))
 }
