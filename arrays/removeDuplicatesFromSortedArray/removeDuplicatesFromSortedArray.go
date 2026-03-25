@@ -1,17 +1,21 @@
 package removeduplicatesfromsortedarray
 
 func RemoveDuplicatesFromSortedArray(nums []int) int {
-	var uniqueRegister []int
+	numsLen := len(nums)
+	if numsLen == 0 {
+		return 0
+	}
+	uniqueIndex := -1
 
-	uniqueRegister = append(uniqueRegister, nums[0])
-
-	for i := 1; i < len(nums); i++ {
-		if nums[i] != nums[i-1] {
-			uniqueRegister = append(uniqueRegister, nums[i])
+	for i := 0; i < numsLen-1; i++ {
+		if nums[i] != nums[i+1] {
+			uniqueIndex++
+			nums[uniqueIndex] = nums[i]
 		}
 	}
 
-	copy(nums, uniqueRegister)
+	uniqueIndex++
+	nums[uniqueIndex] = nums[numsLen-1]
 
-	return len(uniqueRegister)
+	return uniqueIndex+1
 }
