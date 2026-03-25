@@ -1,15 +1,20 @@
 package rotatearray
 
 func rotate(nums []int, k int) {
-	result := []int{}
-	numsLength := len(nums)
-	k = k%numsLength
-	start := numsLength - k
-	end := start + numsLength
-
-	for i := start; i < end; i++ {
-		result = append(result, nums[i%numsLength])
+	k = k%len(nums)
+	if k == 0 || len(nums) == 1 {
+		return
 	}
-	
-	copy(nums, result)
+	reverse(nums, 0, len(nums)-1)
+	reverse(nums, 0, k-1)
+	reverse(nums, k, len(nums)-1)
+}
+
+func reverse(nums []int, low, high int) {
+	mid := low + (high-low)/2
+	for i := low; i <= mid; i++ {
+		temp := nums[i]
+		nums[i] = nums[high-(i-low)]
+		nums[high-(i-low)] = temp
+	}
 }
